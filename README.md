@@ -16,9 +16,12 @@ python -m pip install -r requirements.txt
 python -m pytest -q -W error
 ```
 
-Verified result: **93 passed**, with no warnings. The GitHub Actions workflow
-runs the tests and enforces both the combined coverage score and the separate
-Lab 6 branch percentage at 90% or higher.
+Verified result: **93 passed**, with no warnings. An optional GitHub Actions
+template is included at `ci/github-actions-tests.yml`. It runs the tests and
+enforces both the combined coverage score and the separate Lab 6 branch
+percentage at 90% or higher. It is not active: the connected GitHub credential
+does not have the workflow scope. To enable it later, copy it to
+`.github/workflows/tests.yml` using a credential with that scope.
 
 ## Deliverables
 
