@@ -1,0 +1,4 @@
+$ python -m coverage json -o evidence/line_coverage.json
+Wrote JSON report to evidence/line_coverage.json
+
+Exit code: 0
