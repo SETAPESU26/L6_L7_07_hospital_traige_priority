@@ -1,0 +1,5 @@
+$ python -m pytest test_processor.py test_processor_regression.py -q
+.............................................................                                [100%]
+61 passed in 1.23s
+
+Exit code: 0

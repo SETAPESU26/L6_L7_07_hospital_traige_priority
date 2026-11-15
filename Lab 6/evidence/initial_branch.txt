@@ -1,0 +1,5 @@
+$ python -m coverage run --branch --source=hospital_triage_priority -m pytest test_hospital_triage.py -q
+.                                                                                            [100%]
+1 passed in 0.54s
+
+Exit code: 0

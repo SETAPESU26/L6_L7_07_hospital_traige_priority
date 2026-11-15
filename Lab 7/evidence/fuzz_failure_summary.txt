@@ -1,0 +1,9 @@
+$ python -m pytest test_processor.py -q --tb=no
+FFF                                                                                          [100%]
+===================================== short test summary info =====================================
+FAILED test_processor.py::test_parse_vitals_summary_no_crash - BaseExceptionGroup: Hypothesis fou...
+FAILED test_processor.py::test_compute_patient_bmi_safe - BaseExceptionGroup: Hypothesis found 5 ...
+FAILED test_processor.py::test_assign_ward_bed_safe - BaseExceptionGroup: Hypothesis found 3 dist...
+3 failed in 1.28s
+
+Exit code: 1

@@ -1,0 +1,8 @@
+$ python -m coverage report -m
+Name                          Stmts   Miss  Cover   Missing
+-----------------------------------------------------------
+hospital_triage_priority.py      45     24    47%   3, 10, 21-22, 25-29, 31, 36, 39, 41, 46-58
+-----------------------------------------------------------
+TOTAL                            45     24    47%
+
+Exit code: 0
