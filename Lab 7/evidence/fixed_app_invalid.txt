@@ -1,0 +1,12 @@
+$ python processor.py
+Standard input (one value per line): '\n70/0\nUNKNOWN-1\n'
+==== Running parse_vitals_summary ====
+Enter vitals (HR,SpO2,Temp): Summary: Invalid vitals summary
+
+==== Running compute_patient_bmi ====
+Enter weight/height (e.g. 70/1.75): BMI: Invalid BMI input
+
+==== Running assign_ward_bed ====
+Enter allocation (e.g. ICU-05): Assignment: Invalid ward allocation
+
+Exit code: 0

@@ -1,0 +1,240 @@
+$ python -m pytest test_processor.py -q --tb=short
+FFF                                                                                          [100%]
+============================================ FAILURES =============================================
+_______________________________ test_parse_vitals_summary_no_crash ________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 8, in test_parse_vitals_summary_no_crash
+  |     @given(st.text() | st.none())
+  |                    ^^^
+  | BaseExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 11, in test_parse_vitals_summary_no_crash
+    |     result = parse_vitals_summary(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 4, in parse_vitals_summary
+    |     spo2 = float(parts[1])
+    |                  ~~~~~^^^
+    | IndexError: list index out of range
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 13, in test_parse_vitals_summary_no_crash
+    |     pytest.fail(f"parse_vitals_summary crashed for {s!r}: {exc!r}")
+    | Failed: parse_vitals_summary crashed for '0': IndexError('list index out of range')
+    | Failing test case: test_parse_vitals_summary_no_crash(
+    |     s='0',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 11, in test_parse_vitals_summary_no_crash
+    |     result = parse_vitals_summary(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 3, in parse_vitals_summary
+    |     hr = float(parts[0])
+    |          ^^^^^^^^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 13, in test_parse_vitals_summary_no_crash
+    |     pytest.fail(f"parse_vitals_summary crashed for {s!r}: {exc!r}")
+    | Failed: parse_vitals_summary crashed for '': ValueError("could not convert string to float: ''")
+    | Failing test case: test_parse_vitals_summary_no_crash(
+    |     s='',  # or any other generated value
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 11, in test_parse_vitals_summary_no_crash
+    |     result = parse_vitals_summary(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 2, in parse_vitals_summary
+    |     parts = vitals_csv.split(',')
+    |             ^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 13, in test_parse_vitals_summary_no_crash
+    |     pytest.fail(f"parse_vitals_summary crashed for {s!r}: {exc!r}")
+    | Failed: parse_vitals_summary crashed for None: AttributeError("'NoneType' object has no attribute 'split'")
+    | Failing test case: test_parse_vitals_summary_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+__________________________________ test_compute_patient_bmi_safe __________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 18, in test_compute_patient_bmi_safe
+  |     @given(st.text() | st.none())
+  |                    ^^^
+  | BaseExceptionGroup: Hypothesis found 5 distinct failures. (5 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 21, in test_compute_patient_bmi_safe
+    |     result = compute_patient_bmi(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 13, in compute_patient_bmi
+    |     bmi = weight / (height ** 2)
+    |           ~~~~~~~^~~~~~~~~~~~~~~
+    | ZeroDivisionError: float division by zero
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 23, in test_compute_patient_bmi_safe
+    |     pytest.fail(f"compute_patient_bmi crashed for {s!r}: {exc!r}")
+    | Failed: compute_patient_bmi crashed for '0/0': ZeroDivisionError('float division by zero')
+    | Failing test case: test_compute_patient_bmi_safe(
+    |     s='0/0',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 21, in test_compute_patient_bmi_safe
+    |     result = compute_patient_bmi(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 12, in compute_patient_bmi
+    |     height = float(h_str)
+    |              ^^^^^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 23, in test_compute_patient_bmi_safe
+    |     pytest.fail(f"compute_patient_bmi crashed for {s!r}: {exc!r}")
+    | Failed: compute_patient_bmi crashed for '0/': ValueError("could not convert string to float: ''")
+    | Failing test case: test_compute_patient_bmi_safe(
+    |     s='0/',
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 21, in test_compute_patient_bmi_safe
+    |     result = compute_patient_bmi(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 11, in compute_patient_bmi
+    |     weight = float(w_str)
+    |              ^^^^^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 23, in test_compute_patient_bmi_safe
+    |     pytest.fail(f"compute_patient_bmi crashed for {s!r}: {exc!r}")
+    | Failed: compute_patient_bmi crashed for '/': ValueError("could not convert string to float: ''")
+    | Failing test case: test_compute_patient_bmi_safe(
+    |     s='/',
+    | )
+    +---------------- 4 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 21, in test_compute_patient_bmi_safe
+    |     result = compute_patient_bmi(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 10, in compute_patient_bmi
+    |     w_str, h_str = bmi_string.split('/')
+    |     ^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 23, in test_compute_patient_bmi_safe
+    |     pytest.fail(f"compute_patient_bmi crashed for {s!r}: {exc!r}")
+    | Failed: compute_patient_bmi crashed for '': ValueError('not enough values to unpack (expected 2, got 1)')
+    | Failing test case: test_compute_patient_bmi_safe(
+    |     s='',  # or any other generated value
+    | )
+    +---------------- 5 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 21, in test_compute_patient_bmi_safe
+    |     result = compute_patient_bmi(s)
+    |              ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 10, in compute_patient_bmi
+    |     w_str, h_str = bmi_string.split('/')
+    |                    ^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 23, in test_compute_patient_bmi_safe
+    |     pytest.fail(f"compute_patient_bmi crashed for {s!r}: {exc!r}")
+    | Failed: compute_patient_bmi crashed for None: AttributeError("'NoneType' object has no attribute 'split'")
+    | Failing test case: test_compute_patient_bmi_safe(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+____________________________________ test_assign_ward_bed_safe ____________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 28, in test_assign_ward_bed_safe
+  |     @given(st.text() | st.none())
+  |                    ^^^
+  | BaseExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 31, in test_assign_ward_bed_safe
+    |     result = assign_ward_bed(s)
+    |              ^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 24, in assign_ward_bed
+    |     bed_num = int(bed_str)
+    |               ^^^^^^^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 33, in test_assign_ward_bed_safe
+    |     pytest.fail(f"assign_ward_bed crashed for {s!r}: {exc!r}")
+    | Failed: assign_ward_bed crashed for '-': ValueError("invalid literal for int() with base 10: ''")
+    | Failing test case: test_assign_ward_bed_safe(
+    |     s='-',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 31, in test_assign_ward_bed_safe
+    |     result = assign_ward_bed(s)
+    |              ^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 17, in assign_ward_bed
+    |     ward, bed_str = allocation_code.strip().split('-')
+    |     ^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 33, in test_assign_ward_bed_safe
+    |     pytest.fail(f"assign_ward_bed crashed for {s!r}: {exc!r}")
+    | Failed: assign_ward_bed crashed for '': ValueError('not enough values to unpack (expected 2, got 1)')
+    | Failing test case: test_assign_ward_bed_safe(
+    |     s='',  # or any other generated value
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 31, in test_assign_ward_bed_safe
+    |     result = assign_ward_bed(s)
+    |              ^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\processor.py", line 17, in assign_ward_bed
+    |     ward, bed_str = allocation_code.strip().split('-')
+    |                     ^^^^^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'strip'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "C:\Users\Manishgowda\Documents\Codex\2026-11-15\https-github-com-setapesu26-l6-l7-2\work\repository\Lab 7\baseline\test_processor.py", line 33, in test_assign_ward_bed_safe
+    |     pytest.fail(f"assign_ward_bed crashed for {s!r}: {exc!r}")
+    | Failed: assign_ward_bed crashed for None: AttributeError("'NoneType' object has no attribute 'strip'")
+    | Failing test case: test_assign_ward_bed_safe(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+===================================== short test summary info =====================================
+FAILED test_processor.py::test_parse_vitals_summary_no_crash - BaseExceptionGroup: Hypothesis fou...
+FAILED test_processor.py::test_compute_patient_bmi_safe - BaseExceptionGroup: Hypothesis found 5 ...
+FAILED test_processor.py::test_assign_ward_bed_safe - BaseExceptionGroup: Hypothesis found 3 dist...
+3 failed in 2.62s
+
+Exit code: 1

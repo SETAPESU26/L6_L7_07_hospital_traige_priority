@@ -1,18 +1,11 @@
-# L6_L7_07 — Hospital Triage Priority
+# Lab 7 - Fuzz Testing with Hypothesis
 
-Lab 7: Fuzz Testing with Hypothesis
+- `processor.py`: input-safe implementation with the original valid output format.
+- `test_processor.py`: three completed text/None no-crash properties (300 examples each).
+- `test_processor_regression.py`: regression tests and four structured properties (200 each).
+- `baseline/`: original implementation and the three properties, intentionally failing.
+- `evidence/`: original failures, fixed outputs, screenshots, and passing test statistics.
+- `../reports/Lab7_Fuzz_Testing_Report.pdf`: screenshot report and bug analysis.
 
-## About
-
-A set of property-based fuzz tests targeting patient vitals summaries, BMI calculations, and ward bed allocation descriptors to expose crashes on malformed data.
-
-## Files
-
-| File | Description |
-|------|-------------|
-| `processor.py` | The module under test (buggy starter code) |
-| `test_processor.py` | Starter test file to complete using Hypothesis |
-
-Keep all your Lab 7 work in this `LAB7` folder.
-
-Refer to the lab handout for instructions.
+All 61 Lab 7 tests pass, including 1,700 generated examples. See the root README
+for the input contract, commands, and baseline reproduction instructions.
